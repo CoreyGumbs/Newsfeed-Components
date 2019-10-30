@@ -113,30 +113,44 @@ const data = [
 
 */
 
-const createArticle= (article) => {
+const createArticle= (title, date, paragraph1, paragraph2, paragraph3) => {
 
   //create elements
   const articleCard = document.createElement('div');
   const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
   const articleParagraph1 = document.createElement('p');
   const articleParagraph2 = document.createElement('p');
   const articleParagraph3 = document.createElement('p');
   const articleExpandBtn = document.createElement('span');
 
+
   //append elements
-  articleCard.append(articleTitle, articleParagraph1, articleParagraph2, articleParagraph3);
+  articleCard.append(articleTitle, articleDate, articleParagraph1, articleParagraph2, articleParagraph3);
 
   //add classes
   articleCard.classList.add('article');
+  articleDate.classList.add('date');
+  articleExpandBtn.classList.add('expandButton', 'article-open');
+
+  //add content
+  const open = '	\u25BE';
+  const close = 	'\u002B';
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleParagraph1.textContent =  paragraph1;
+  articleParagraph2.textContent = paragraph2;
+  articleParagraph2.textContent = paragraph2;
+  articleParagraph3.textContent = paragraph3;
 
   return articleCard;
-
 }
 
 
 const articles = document.querySelector('.articles');
 
-
-articles.appendChild(createArticle(data));
+data.map( article =>{
+  articles.append(createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
+});
 
 console.log(articles);
