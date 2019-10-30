@@ -113,13 +113,26 @@ const data = [
 
 */
 
-const article = (title, date, paragraph1, paragraph2, paragraph3) => {
+
+
+const createArticle= (article) => {
+
+  //create elements
   const articleCard = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleParagraph1 = document.createElement('p');
   const articleParagraph2 = document.createElement('p');
   const articleParagraph3 = document.createElement('p');
   const articleExpandBtn = document.createElement('span');
+
+  //append elements
+  articleCard.append(articleTitle, articleParagraph1, articleParagraph2, articleParagraph3);
+  console.log(articleCard);
+  //add classes
+  articleCard.classList.add('article');
+
+
+
 
   return articleCard;
 
