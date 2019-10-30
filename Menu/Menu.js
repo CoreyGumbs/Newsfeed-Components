@@ -51,15 +51,26 @@ const createMenu = (menu) => {
   //append elements
   menuCard.appendChild(menuList);
   
+  //iterate, create, append, add content to li
   menu.forEach((item, idx) => {
     let menuItem = document.createElement('li'); 
     menuList.appendChild(menuItem);
     menuItem.textContent = item;
   });
 
-  console.log(menuCard);
-  return menuCard;
+  //add class 
+  menuCard.classList.add('menu');
 
+  //menu-button
+  const menuBtn = document.querySelector('.menu-button');
+
+  menuBtn.addEventListener('click', (e)=>{
+    console.log('toggled', e.target);
+    menuCard.classList.toggle('menu--open');
+  });
+
+
+  return menuCard;
 }
 
 menu.appendChild(createMenu(menuItems));
