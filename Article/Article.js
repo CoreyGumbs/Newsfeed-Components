@@ -159,5 +159,3 @@ const articles = document.querySelector('.articles');
 data.map( article =>{
   articles.append(createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
 });
-
-console.log(articles);
