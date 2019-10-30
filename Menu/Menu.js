@@ -52,7 +52,7 @@ const createMenu = (menu) => {
   menuCard.appendChild(menuList);
   
   //iterate, create, append, add content to li
-  menu.forEach((item, idx) => {
+  menu.forEach(item => {
     let menuItem = document.createElement('li'); 
     menuList.appendChild(menuItem);
     menuItem.textContent = item;
