@@ -123,25 +123,32 @@ const createArticle= (title, date, paragraph1, paragraph2, paragraph3) => {
   const articleParagraph2 = document.createElement('p');
   const articleParagraph3 = document.createElement('p');
   const articleExpandBtn = document.createElement('span');
+ 
+
+
+  //icons
+  const openBtn = '	\u25BC';
+  const closeBtn = 	'\u25BA';
 
 
   //append elements
-  articleCard.append(articleTitle, articleDate, articleParagraph1, articleParagraph2, articleParagraph3);
+  articleCard.append(articleTitle, articleDate, articleParagraph1, articleParagraph2, articleParagraph3, articleExpandBtn);
+ 
 
   //add classes
   articleCard.classList.add('article');
   articleDate.classList.add('date');
-  articleExpandBtn.classList.add('expandButton', 'article-open');
+  articleExpandBtn.classList.add('expandButton');
+
 
   //add content
-  const open = '	\u25BE';
-  const close = 	'\u002B';
   articleTitle.textContent = title;
   articleDate.textContent = date;
   articleParagraph1.textContent =  paragraph1;
   articleParagraph2.textContent = paragraph2;
   articleParagraph2.textContent = paragraph2;
   articleParagraph3.textContent = paragraph3;
+  articleExpandBtn.textContent = openBtn;
 
   return articleCard;
 }
