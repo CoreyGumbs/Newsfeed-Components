@@ -113,8 +113,6 @@ const data = [
 
 */
 
-
-
 const createArticle= (article) => {
 
   //create elements
@@ -127,13 +125,18 @@ const createArticle= (article) => {
 
   //append elements
   articleCard.append(articleTitle, articleParagraph1, articleParagraph2, articleParagraph3);
-  console.log(articleCard);
+
   //add classes
   articleCard.classList.add('article');
-
-
-
 
   return articleCard;
 
 }
+
+
+const articles = document.querySelector('.articles');
+
+
+articles.appendChild(createArticle(data));
+
+console.log(articles);
