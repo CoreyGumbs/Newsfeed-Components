@@ -65,10 +65,8 @@ const createMenu = (menu) => {
   const menuBtn = document.querySelector('.menu-button');
 
   menuBtn.addEventListener('click', (e)=>{
-    console.log('toggled', e.target);
     menuCard.classList.toggle('menu--open');
   });
-
 
   return menuCard;
 }
