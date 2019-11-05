@@ -112,3 +112,49 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const createArticle= (title, date, paragraph1, paragraph2, paragraph3) => {
+
+  //create elements
+  const articleCard = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleParagraph1 = document.createElement('p');
+  const articleParagraph2 = document.createElement('p');
+  const articleParagraph3 = document.createElement('p');
+  const articleExpandBtn = document.createElement('span');
+
+  //icons
+  const openBtn = '	\u25BC';
+  const closeBtn = 	'\u25BA';
+
+  //append elements
+  articleCard.append(articleTitle, articleDate, articleParagraph1, articleParagraph2, articleParagraph3, articleExpandBtn);
+ 
+  //add classes
+  articleCard.classList.add('article');
+  articleDate.classList.add('date');
+  articleExpandBtn.classList.add('expandButton');
+
+  //add content
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleParagraph1.textContent =  paragraph1;
+  articleParagraph2.textContent = paragraph2;
+  articleParagraph2.textContent = paragraph2;
+  articleParagraph3.textContent = paragraph3;
+  articleExpandBtn.textContent = openBtn;
+
+  //event listners
+  articleExpandBtn.addEventListener('click', e => {
+    articleCard.classList.toggle('article-open');
+  });
+  
+  return articleCard;
+}
+
+const articles = document.querySelector('.articles');
+
+data.map( article =>{
+  articles.append(createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
+});
